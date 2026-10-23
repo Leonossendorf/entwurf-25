@@ -177,6 +177,7 @@
   var form = $('#form'), aktiv = 'garten';
   function setzeWeiche(t) {
     aktiv = t;
+    form.setAttribute("data-teil", t);
     $$('.weichen button').forEach(function (b) { b.setAttribute('aria-selected', b.dataset.teil === t ? 'true' : 'false'); });
     $$('.teil').forEach(function (d) { d.hidden = d.dataset.teil !== t; });
     $('#vorschau-grab').hidden = t !== 'grab';
