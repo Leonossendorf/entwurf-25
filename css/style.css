@@ -1,0 +1,290 @@
+@font-face{font-family:"Spectral";src:url(../fonts/spectral-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Spectral";src:url(../fonts/spectral-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Spectral";src:url(../fonts/spectral-latin-500-italic.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Figtree";src:url(../fonts/figtree-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Figtree";src:url(../fonts/figtree-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Figtree";src:url(../fonts/figtree-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Figtree";src:url(../fonts/figtree-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Kalam";src:url(../fonts/kalam-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+
+:root{
+  --moos:#2c4433; --moos-2:#3f6249; --blatt:#7fa268; --erde:#8b5a3c; --heide:#86557f; --licht:#e2a845;
+  --papier:#f6f2e9; --stein:#e9e3d6; --stein-2:#d9d1c0; --ink:#1e2520; --ink-2:#56605a; --weiss:#fffdf8;
+  --fruehling:#9cbf6e; --sommer:#d8b24c; --herbst:#a0618f; --winter:#40604f;
+  --r:14px; --schatten:0 1px 2px rgba(30,37,32,.06),0 10px 30px -12px rgba(30,37,32,.25);
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:400 17px/1.6 "Figtree",system-ui,sans-serif;color:var(--ink);background:var(--papier);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--moos-2)}
+h1,h2,h3{font-family:"Spectral",Georgia,serif;font-weight:600;line-height:1.12;margin:0;letter-spacing:-.01em;color:var(--moos)}
+h1{font-size:clamp(2.3rem,5.4vw,4.1rem)}
+h2{font-size:clamp(1.8rem,3.6vw,2.7rem)}
+h3{font-size:1.32rem}
+p{margin:0 0 1em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.kicker{font:600 .78rem/1 "Figtree",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--erde);margin-bottom:14px;display:block}
+.lead{font-size:1.12rem;color:var(--ink-2);max-width:40em}
+section{padding:88px 0}
+:focus-visible{outline:3px solid var(--licht);outline-offset:3px}
+
+/* Entwurf-Hinweis */
+.entwurf{background:var(--moos);color:#e9efe6;font-size:.82rem;text-align:center;padding:7px 14px;line-height:1.4}
+.entwurf b{color:#fff}
+
+/* Kopf */
+.kopf{position:sticky;top:0;z-index:40;background:rgba(246,242,233,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--stein-2)}
+.kopf .wrap{display:flex;align-items:center;gap:24px;height:72px}
+.marke{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--moos)}
+.marke svg{width:36px;height:36px;flex:none}
+.marke b{font:600 1.5rem/1 "Spectral",serif;display:block}
+.marke small{font:500 .72rem/1.2 "Figtree",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.nav{display:flex;gap:22px;margin-left:auto}
+.nav a{text-decoration:none;color:var(--ink);font-weight:500;font-size:.95rem}
+.nav a:hover{color:var(--erde)}
+.knopf{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 22px;border-radius:999px;font:600 1rem/1 "Figtree",sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background .2s,transform .2s}
+.knopf svg{width:18px;height:18px}
+.knopf.voll{background:var(--moos);color:#fff}
+.knopf.voll:hover{background:var(--moos-2)}
+.knopf.hell{background:var(--weiss);color:var(--moos);box-shadow:inset 0 0 0 1.5px var(--stein-2)}
+.knopf.hell:hover{box-shadow:inset 0 0 0 1.5px var(--moos)}
+.knopf.licht{background:var(--licht);color:#2a1f0c}
+.kopf .knopf{padding:11px 18px;font-size:.95rem}
+
+/* Hero */
+.hero{padding:56px 0 40px}
+.hero-kopf{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:end;margin-bottom:34px}
+.hero-kopf h1 em{font-style:italic;font-weight:500;color:var(--erde)}
+.hero-kopf p{margin:0;font-size:1.12rem;color:var(--ink-2)}
+.wege{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.weg{position:relative;border-radius:22px;overflow:hidden;min-height:470px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;text-decoration:none;box-shadow:var(--schatten);isolation:isolate}
+.weg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.weg:hover img{transform:scale(1.035)}
+.weg::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,28,22,0) 25%,rgba(20,28,22,.82) 100%)}
+.weg.grab::after{background:linear-gradient(180deg,rgba(18,16,20,.05) 10%,rgba(18,16,20,.86) 100%)}
+.weg-inhalt{padding:30px}
+.weg .tag{display:inline-block;font:600 .74rem/1 "Figtree";letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);padding:7px 11px;border-radius:99px;margin-bottom:14px}
+.weg h2{color:#fff;font-size:clamp(1.9rem,3.2vw,2.6rem);margin-bottom:10px}
+.weg ul{list-style:none;padding:0;margin:0 0 22px;display:flex;flex-wrap:wrap;gap:8px}
+.weg li{font-size:.92rem;background:rgba(255,255,255,.14);padding:6px 11px;border-radius:8px}
+.weg .knopf{align-self:flex-start}
+.bsp{position:absolute;top:14px;right:14px;font:500 .7rem/1 "Figtree";letter-spacing:.06em;background:rgba(0,0,0,.45);color:#fff;padding:5px 8px;border-radius:6px;z-index:2}
+.bsp.dunkel{background:rgba(255,255,255,.75);color:var(--ink)}
+
+/* Saison-Hinweis */
+.saison{margin-top:22px;display:flex;align-items:center;gap:16px;background:var(--weiss);border:1px solid var(--stein-2);border-radius:var(--r);padding:16px 20px}
+.saison .punkt{width:12px;height:12px;border-radius:50%;background:var(--herbst);flex:none;box-shadow:0 0 0 5px rgba(160,97,143,.16)}
+.saison p{margin:0;flex:1}
+.saison a{font-weight:600;white-space:nowrap}
+
+/* Gärtnerjahr */
+.jahr{background:var(--weiss);border-top:1px solid var(--stein-2);border-bottom:1px solid var(--stein-2)}
+.jahr-grid{display:grid;grid-template-columns:minmax(300px,440px) 1fr;gap:56px;align-items:center;margin-top:40px}
+.ring{position:relative;max-width:440px;width:100%;margin:0 auto}
+.ring svg{width:100%;height:auto;display:block;overflow:visible}
+.ring .seg{cursor:pointer;transition:opacity .35s, filter .35s}
+.ring .seg path{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.ring[data-aktiv] .seg{opacity:.42;filter:saturate(.6)}
+.ring[data-aktiv="fruehling"] .seg.fruehling,.ring[data-aktiv="sommer"] .seg.sommer,.ring[data-aktiv="herbst"] .seg.herbst,.ring[data-aktiv="winter"] .seg.winter{opacity:1;filter:none}
+.ring .mon{font:600 11px "Figtree";fill:var(--ink-2);letter-spacing:.04em}
+.ring .gedenk{font:600 10.5px "Figtree";fill:var(--heide)}
+.ring .mitte-t{font:600 25px "Spectral";fill:var(--moos)}
+.ring .mitte-s{font:500 12.5px "Figtree";fill:var(--ink-2)}
+.ring .heute{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.zeiten{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.zeiten button{font:600 .95rem "Figtree";padding:10px 16px;border-radius:99px;border:1.5px solid var(--stein-2);background:var(--papier);color:var(--ink);cursor:pointer;display:flex;align-items:center;gap:8px}
+.zeiten button i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.zeiten button[aria-pressed="true"]{background:var(--moos);border-color:var(--moos);color:#fff}
+.zeiten button small{font-weight:500;opacity:.8;font-size:.78rem}
+.zeit-tafel{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.zeit-tafel .spalte{background:var(--papier);border:1px solid var(--stein-2);border-radius:var(--r);padding:22px}
+.zeit-tafel h3{font-size:1.15rem;display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.zeit-tafel h3 svg{width:22px;height:22px;flex:none}
+.zeit-tafel ul{margin:0;padding:0;list-style:none}
+.zeit-tafel li{padding:7px 0 7px 22px;position:relative;border-top:1px dashed var(--stein-2);font-size:.98rem}
+.zeit-tafel li:first-child{border-top:0}
+.zeit-tafel li::before{content:"";position:absolute;left:3px;top:15px;width:8px;height:8px;border-radius:50%;background:var(--blatt)}
+.zeit-tafel .grab li::before{background:var(--heide)}
+.zeit-tafel .hinweis{margin-top:14px;font-size:.88rem;color:var(--ink-2)}
+.zeit-fuss{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+.zeit-tafel{transition:opacity .25s}
+.zeit-tafel.wechsel{opacity:0}
+
+/* Garten */
+.leistungen{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.karte{background:var(--weiss);border:1px solid var(--stein-2);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.karte .bild{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--stein)}
+.karte .bild img{width:100%;height:100%;object-fit:cover}
+.karte .text{padding:20px 22px 24px}
+.karte h3{margin-bottom:8px}
+.karte p{margin:0;color:var(--ink-2);font-size:.98rem}
+.karte.ohne-bild{background:var(--moos);color:#e6ede3;border:0;justify-content:center}
+.karte.ohne-bild h3{color:#fff}
+.karte.ohne-bild p{color:#dfe8db}
+.karte.ohne-bild .text{padding:30px}
+.zitat{margin:40px 0 0;padding:28px 32px;border-left:4px solid var(--blatt);background:var(--weiss);border-radius:0 var(--r) var(--r) 0;font:500 italic 1.3rem/1.45 "Spectral",serif;color:var(--moos)}
+.zitat cite{display:block;margin-top:8px;font:500 .85rem "Figtree";font-style:normal;color:var(--ink-2)}
+
+/* Grabpflege */
+.grabpflege{background:#24262a;color:#e8e4dc;position:relative;overflow:hidden}
+.grabpflege h2,.grabpflege h3{color:#f6f1e6}
+.grabpflege .kicker{color:var(--licht)}
+.grabpflege .lead{color:#c9c3b8}
+.grab-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:40px}
+.grab-bild{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5}
+.grab-bild img{width:100%;height:100%;object-fit:cover}
+.pflege-arten{display:grid;gap:14px}
+.pflege-art{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:20px;border-radius:var(--r);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.pflege-art .nr{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font:600 1.2rem "Spectral";background:rgba(226,168,69,.15);color:var(--licht)}
+.pflege-art h3{font-size:1.18rem;margin-bottom:4px}
+.pflege-art p{margin:0;color:#c9c3b8;font-size:.97rem}
+.dauer{margin-top:64px;display:grid;grid-template-columns:1.1fr 1fr;gap:44px;padding:44px;border-radius:24px;background:linear-gradient(135deg,#2f3a33,#283028);border:1px solid rgba(255,255,255,.1)}
+.dauer .siegel{display:inline-flex;align-items:center;gap:10px;font:600 .85rem "Figtree";padding:9px 14px;border-radius:99px;background:rgba(226,168,69,.14);color:#f2d9a8;margin-bottom:18px}
+.dauer .siegel svg{width:18px;height:18px}
+.dauer ol{margin:0;padding:0;list-style:none;counter-reset:s}
+.dauer li{counter-increment:s;position:relative;padding:0 0 22px 52px}
+.dauer li::before{content:counter(s);position:absolute;left:0;top:-2px;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--licht);color:var(--licht);display:grid;place-items:center;font:600 1rem "Spectral"}
+.dauer li::after{content:"";position:absolute;left:16.5px;top:36px;bottom:4px;width:1px;background:rgba(226,168,69,.35)}
+.dauer li:last-child::after{display:none}
+.dauer li b{display:block;color:#f6f1e6;font-weight:600;margin-bottom:2px}
+.dauer li span{color:#c9c3b8;font-size:.97rem}
+.fern{margin-top:24px;padding:18px 20px;border-radius:var(--r);background:rgba(255,255,255,.06);font-size:.98rem;color:#ddd6ca}
+
+/* Planer & Formular */
+.anfrage{background:var(--papier)}
+.form-rahmen{margin-top:36px;background:var(--weiss);border:1px solid var(--stein-2);border-radius:24px;box-shadow:var(--schatten);overflow:hidden}
+.weichen{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--stein-2)}
+.weichen button{font:600 1rem "Figtree";padding:20px 14px;border:0;background:var(--papier);color:var(--ink-2);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;border-right:1px solid var(--stein-2)}
+.weichen button:last-child{border-right:0}
+.weichen button svg{width:22px;height:22px}
+.weichen button[aria-selected="true"]{background:var(--weiss);color:var(--moos);box-shadow:inset 0 -3px 0 var(--moos)}
+.form-inhalt{display:grid;grid-template-columns:1fr 360px;gap:0}
+.felder{padding:32px}
+.vorschau{background:var(--papier);border-left:1px solid var(--stein-2);padding:28px;display:flex;flex-direction:column;gap:14px}
+.vorschau h4{margin:0;font:600 .78rem "Figtree";letter-spacing:.12em;text-transform:uppercase;color:var(--erde)}
+.vorschau .plan{background:var(--weiss);border:1px solid var(--stein-2);border-radius:var(--r);padding:16px}
+.vorschau .plan svg{width:100%;height:auto;display:block}
+.vorschau .plan-legende{font-size:.86rem;color:var(--ink-2);min-height:2.8em}
+.vorschau .plan-zeiten{display:flex;gap:6px;flex-wrap:wrap}
+.vorschau .plan-zeiten button{font:600 .8rem "Figtree";padding:6px 10px;border-radius:99px;border:1px solid var(--stein-2);background:var(--weiss);cursor:pointer;color:var(--ink)}
+.vorschau .plan-zeiten button[aria-pressed="true"]{background:var(--heide);border-color:var(--heide);color:#fff}
+.vorschau .plan-zeiten button:disabled{opacity:.35;cursor:default}
+.zusammen{font-size:.9rem;color:var(--ink-2);background:var(--weiss);border:1px dashed var(--stein-2);border-radius:12px;padding:12px 14px}
+.zusammen b{color:var(--ink)}
+.feld{margin-bottom:22px}
+.feld>label,.feld>.lbl{display:block;font-weight:600;margin-bottom:9px;font-size:.98rem}
+.feld .opt{font-weight:400;color:var(--ink-2);font-size:.86rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;padding:10px 15px;border-radius:99px;border:1.5px solid var(--stein-2);background:var(--papier);cursor:pointer;font-size:.95rem;font-weight:500;transition:background .15s,border-color .15s}
+.chips input:checked+span{background:var(--moos);border-color:var(--moos);color:#fff}
+.chips input:focus-visible+span{outline:3px solid var(--licht);outline-offset:2px}
+.chips.heide input:checked+span{background:var(--heide);border-color:var(--heide)}
+input[type=text],input[type=tel],input[type=email],textarea{width:100%;font:400 1rem "Figtree";padding:13px 14px;border-radius:12px;border:1.5px solid var(--stein-2);background:var(--papier);color:var(--ink)}
+input:focus,textarea:focus{outline:0;border-color:var(--moos);background:#fff}
+textarea{min-height:96px;resize:vertical}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.slider{display:flex;align-items:center;gap:14px}
+.slider input{flex:1;accent-color:var(--moos);height:28px}
+.slider output{min-width:96px;font-weight:600;color:var(--moos);text-align:right}
+.rueckweg{background:var(--papier);border-radius:var(--r);padding:18px;border:1px solid var(--stein-2)}
+.rueckweg .lbl{margin-bottom:4px}
+.rueckweg .klein{font-size:.86rem;color:var(--ink-2);margin:0 0 12px}
+.fehler{color:#a33b2b;font-size:.9rem;margin-top:8px;display:none}
+.fehler.an{display:block}
+.senden{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:6px}
+.senden small{color:var(--ink-2);font-size:.85rem}
+.teil[hidden]{display:none}
+.datei{font-size:.92rem}
+.danke{display:none;padding:44px 32px;text-align:center}
+.danke.an{display:block}
+.danke svg{width:56px;height:56px;margin:0 auto 14px}
+.danke p{max-width:34em;margin:0 auto 1em;color:var(--ink-2)}
+.danke .liste{display:inline-block;text-align:left;background:var(--papier);border-radius:var(--r);padding:16px 22px;margin:8px 0 18px;font-size:.95rem}
+
+/* FAQ */
+.fragen{display:grid;grid-template-columns:1fr 1.5fr;gap:56px;align-items:start}
+details{border-top:1px solid var(--stein-2);padding:4px 0}
+details:last-of-type{border-bottom:1px solid var(--stein-2)}
+summary{cursor:pointer;list-style:none;padding:18px 40px 18px 0;font:600 1.12rem/1.35 "Spectral",serif;color:var(--moos);position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:24px;width:12px;height:12px;border-right:2px solid var(--erde);border-bottom:2px solid var(--erde);transform:rotate(45deg);transition:transform .25s}
+details[open] summary::after{transform:rotate(-135deg);top:30px}
+details p{color:var(--ink-2);margin:0 0 18px}
+.quelle{font-size:.82rem;color:var(--ink-2);margin-top:18px}
+
+/* Über uns */
+.ueber{background:var(--weiss);border-top:1px solid var(--stein-2)}
+.ueber-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.platzhalter{aspect-ratio:4/3;border-radius:20px;border:2px dashed var(--stein-2);background:repeating-linear-gradient(135deg,var(--papier) 0 14px,#f1ebdf 14px 28px);display:grid;place-items:center;text-align:center;color:var(--ink-2);padding:24px}
+.platzhalter b{display:block;font:600 1.3rem "Spectral";color:var(--moos);margin-bottom:6px}
+.fakten{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:10px}
+.fakten li{display:flex;gap:12px;align-items:flex-start}
+.fakten svg{width:22px;height:22px;flex:none;color:var(--blatt);margin-top:2px}
+
+/* Kontakt */
+.kontakt{background:var(--moos);color:#e6ede3}
+.kontakt h2{color:#fff}
+.kontakt-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.kontakt .wege-k{display:grid;gap:12px}
+.kontakt a.k{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:var(--r);background:rgba(255,255,255,.08);color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.14)}
+.kontakt a.k:hover{background:rgba(255,255,255,.14)}
+.kontakt a.k svg{width:24px;height:24px;flex:none}
+.kontakt a.k small{display:block;color:#bfd0bb;font-size:.82rem}
+.kontakt a.k b{font-size:1.1rem;font-weight:600}
+
+/* Fuß */
+.fuss{background:#1c2a20;color:#b8c6b4;font-size:.88rem;padding:40px 0 110px}
+.fuss .wrap{display:grid;gap:14px}
+.fuss a{color:#dfe8db}
+.fuss .entwurf-fuss{background:rgba(255,255,255,.06);border-radius:12px;padding:14px 16px;color:#e6ede3}
+
+/* Handy-Leiste */
+.leiste{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:none;gap:10px;padding:8px;border-radius:999px;background:rgba(28,42,32,.94);backdrop-filter:blur(8px);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.leiste a{flex:1;justify-content:center;padding:13px 10px}
+
+/* Einblenden */
+.auf{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.auf.da{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.auf{opacity:1;transform:none;transition:none}.weg img,.ring .heute{transition:none}}
+
+@media (max-width:980px){
+  .nav{display:none}
+  .hero-kopf,.jahr-grid,.grab-grid,.dauer,.fragen,.ueber-grid,.kontakt-grid{grid-template-columns:1fr}
+  .jahr-grid{gap:32px}
+  .leistungen{grid-template-columns:1fr 1fr}
+  .form-inhalt{grid-template-columns:1fr}
+  .vorschau{border-left:0;border-top:1px solid var(--stein-2)}
+  .grab-bild{aspect-ratio:16/10}
+  .dauer{padding:28px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .kopf .wrap{height:62px}
+  .kopf .knopf span{display:none}
+  .kopf .knopf{padding:11px 13px}
+  .marke b{font-size:1.3rem}
+  .hero{padding:34px 0 24px}
+  .hero-kopf{gap:14px;margin-bottom:22px}
+  .wege{grid-template-columns:1fr;gap:14px}
+  .weg{min-height:340px}
+  .weg-inhalt{padding:22px}
+  .saison{flex-wrap:wrap;gap:10px}
+  .zeit-tafel{grid-template-columns:1fr}
+  .leistungen{grid-template-columns:1fr}
+  .felder{padding:22px 18px}
+  .vorschau{padding:20px 18px}
+  .weichen button{flex-direction:column;gap:6px;padding:14px 6px;font-size:.88rem}
+  .zwei{grid-template-columns:1fr}
+  .leiste{display:flex}
+  .zitat{padding:22px;font-size:1.15rem}
+}
+
+/* Feinschliff */
+h2+.lead{margin-top:14px}
+.grab-bild{aspect-ratio:1/1}
+@media (min-width:981px){.vorschau>div{position:sticky;top:96px}}

@@ -1,2 +1,3 @@
 # entwurf-25
-Entwurf
+
+Unverbindlicher Website-Entwurf von Leon Oßendorf für die Gärtnerei Laber (Steinfurt-Borghorst). Kein offizieller Auftritt. Fotos sind gekennzeichnete Beispielbilder von Unsplash.
